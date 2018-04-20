@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 trait UserAttribute
 {
     /**
-     * Automatically Hash password attribute
+     * Automatically Hash password attribute.
      *
      * @var array
      */
