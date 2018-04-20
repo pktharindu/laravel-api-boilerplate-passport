@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use Dingo\Api\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,22 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Create Dingo Router
+$api = app(Router::class);
+
+// Create a Dingo Version Group
+$api->version('v1', function (Router $api) {
+    $api->group(['prefix' => 'auth'], function (Router $api) {
+        $api->post('register', 'App\\Api\\V1\\Controllers\\RegisterController@register');
+        $api->post('login', 'Laravel\Passport\Http\Controllers\AccessTokenController@issueToken');
+    });
+
+    // Protected routes
+    $api->group(['middleware' => 'auth:api'], function (Router $api) {
+        $api->get('protected', function () {
+            return response()->json([
+                'message' => 'Access to protected resources granted! You are seeing this text as you provided the token correctly.',
+            ]);
+        });
+    });
 });
