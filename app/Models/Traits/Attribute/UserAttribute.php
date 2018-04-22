@@ -12,7 +12,7 @@ trait UserAttribute
     /**
      * Automatically Hash password attribute.
      *
-     * @var array
+     * @var string
      */
     public function setPasswordAttribute($pass)
     {

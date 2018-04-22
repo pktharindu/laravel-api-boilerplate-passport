@@ -17,14 +17,13 @@ use Dingo\Api\Routing\Router;
 $api = app(Router::class);
 
 // Create a Dingo Version Group
-$api->version('v1', function (Router $api) {
-    $api->group(['prefix' => 'auth'], function (Router $api) {
+$api->version('v1', function ($api) {
+    $api->group(['prefix' => 'auth'], function ($api) {
         $api->post('register', 'App\\Api\\V1\\Controllers\\RegisterController@register');
-        $api->post('login', 'Laravel\Passport\Http\Controllers\AccessTokenController@issueToken');
     });
 
     // Protected routes
-    $api->group(['middleware' => 'auth:api'], function (Router $api) {
+    $api->group(['middleware' => 'auth:api'], function ($api) {
         $api->get('protected', function () {
             return response()->json([
                 'message' => 'Access to protected resources granted! You are seeing this text as you provided the token correctly.',
