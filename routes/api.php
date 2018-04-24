@@ -20,6 +20,24 @@ $api = app(Router::class);
 $api->version('v1', function ($api) {
     $api->group(['prefix' => 'auth'], function ($api) {
         $api->post('register', 'App\\Api\\V1\\Controllers\\RegisterController@register');
+
+        $api->post('login', 'Laravel\\Passport\\Http\\Controllers\\AccessTokenController@issueToken');
+
+        $api->get('logout', [
+            'middleware' => 'auth:api',
+            'uses' => 'App\\Api\\V1\\Controllers\\LogoutController@logout',
+        ]);
+
+        $api->post('recovery', [
+            'as' => 'password.email',
+            'uses' => 'App\\Api\\V1\\Controllers\\ForgotPasswordController@sendResetEmail',
+        ]);
+        $api->post('reset', 'App\\Api\\V1\\Controllers\\ResetPasswordController@resetPassword');
+        $api->get('reset/{token}', [
+            'as' => 'password.reset',
+            function () {
+            },
+        ]);
     });
 
     // Protected routes
