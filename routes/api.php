@@ -47,5 +47,6 @@ $api->version('v1', function ($api) {
                 'message' => 'Access to protected resources granted! You are seeing this text as you provided the token correctly.',
             ]);
         });
+        $api->get('users', 'App\\Api\\V1\\Controllers\\UserController@index');
     });
 });
