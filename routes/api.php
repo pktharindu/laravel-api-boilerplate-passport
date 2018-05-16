@@ -19,12 +19,19 @@ $api = app(Router::class);
 // Create a Dingo Version Group
 $api->version('v1', function ($api) {
     $api->group(['prefix' => 'auth'], function ($api) {
-        $api->post('register', 'App\\Api\\V1\\Controllers\\RegisterController@register');
+        $api->post('register', [
+            'as' => 'register',
+            'uses' => 'App\\Api\\V1\\Controllers\\RegisterController@register',
+        ]);
 
-        $api->post('login', 'Laravel\\Passport\\Http\\Controllers\\AccessTokenController@issueToken');
+        $api->post('login', [
+            'as' => 'login',
+            'uses' => 'Laravel\\Passport\\Http\\Controllers\\AccessTokenController@issueToken',
+        ]);
 
         $api->get('logout', [
             'middleware' => 'auth:api',
+            'as' => 'logout',
             'uses' => 'App\\Api\\V1\\Controllers\\LogoutController@logout',
         ]);
 
@@ -47,6 +54,15 @@ $api->version('v1', function ($api) {
                 'message' => 'Access to protected resources granted! You are seeing this text as you provided the token correctly.',
             ]);
         });
-        $api->get('users', 'App\\Api\\V1\\Controllers\\UserController@index');
+
+        $api->get('users', [
+            'as' => 'users.index',
+            'uses' => 'App\\Api\\V1\\Controllers\\UserController@index',
+        ]);
+
+        $api->get('users/{user}', [
+            'as' => 'users.show',
+            'uses' => 'App\\Api\\V1\\Controllers\\UserController@show',
+        ]);
     });
 });

@@ -9,6 +9,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        if (App::environment(['local', 'staging'])) {
+            $this->call(AuthTableSeeder::class);
+        }
+
         // $this->call(UsersTableSeeder::class);
     }
 }
