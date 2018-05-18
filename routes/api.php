@@ -17,7 +17,7 @@ use Dingo\Api\Routing\Router;
 $api = app(Router::class);
 
 // Create a Dingo Version Group
-$api->version('v1', function ($api) {
+$api->version('v1', ['middleware' => 'api'], function ($api) {
     $api->group(['prefix' => 'auth'], function ($api) {
         $api->post('register', [
             'as' => 'register',
