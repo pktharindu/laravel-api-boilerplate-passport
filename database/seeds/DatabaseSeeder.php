@@ -9,7 +9,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        if (App::environment(['local', 'staging'])) {
+        if (App::environment('local') || App::environment('staging')) {
             $this->call(AuthTableSeeder::class);
         }
 

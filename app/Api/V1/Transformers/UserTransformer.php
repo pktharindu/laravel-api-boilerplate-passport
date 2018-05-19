@@ -12,7 +12,7 @@ class UserTransformer extends TransformerAbstract
      *
      * @var array
      */
-    protected $availableIncludes = ['roles', 'permissions'];
+    protected $availableIncludes = [];
 
     /**
      * List of resources to automatically include.
@@ -21,6 +21,10 @@ class UserTransformer extends TransformerAbstract
      */
     protected $defaultIncludes = [];
 
+    /**
+     * @property string name
+     * @property string email
+     */
     public function transform(User $user)
     {
         return [
@@ -29,25 +33,5 @@ class UserTransformer extends TransformerAbstract
             'email' => $user->email,
             'added' => date('Y-m-d', strtotime($user->created_at)),
         ];
-    }
-
-    /**
-     * Include Roles.
-     *
-     * @return \League\Fractal\Resource\Collection
-     */
-    public function includeRoles(User $user)
-    {
-        return $this->collection($user->roles, new RoleTransformer());
-    }
-
-    /**
-     * Include Permissions.
-     *
-     * @return \League\Fractal\Resource\Collection
-     */
-    public function includePermissions(User $user)
-    {
-        return $this->collection($user->permissions, new PermissionTransformer());
     }
 }
