@@ -15,11 +15,11 @@ class LogoutController extends Controller
      */
     public function logout()
     {
-        if (! Auth::user()->token()->revoke()) {
+        if (!Auth::user()->token()->revoke()) {
             throw new HttpException(500);
         }
 
         return response()
-            ->json(['message' => 'Successfully logged out']);
+            ->json([ 'message' => 'Successfully logged out' ]);
     }
 }

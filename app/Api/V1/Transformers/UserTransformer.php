@@ -12,14 +12,14 @@ class UserTransformer extends TransformerAbstract
      *
      * @var array
      */
-    protected $availableIncludes = [];
+    protected $availableIncludes = [ ];
 
     /**
      * List of resources to automatically include.
      *
      * @var array
      */
-    protected $defaultIncludes = [];
+    protected $defaultIncludes = [ ];
 
     /**
      * @property string name
