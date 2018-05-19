@@ -15,7 +15,7 @@ class LogoutController extends Controller
      */
     public function logout()
     {
-        if (! $logout = Auth::user()->token()->revoke()) {
+        if (! Auth::user()->token()->revoke()) {
             throw new HttpException(500);
         }
 
