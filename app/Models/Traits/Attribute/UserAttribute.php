@@ -16,6 +16,6 @@ trait UserAttribute
      */
     public function setPasswordAttribute($pass)
     {
-        $this->attributes['password'] = Hash::make($pass);
+        $this->attributes[ 'password' ] = Hash::make($pass);
     }
 }

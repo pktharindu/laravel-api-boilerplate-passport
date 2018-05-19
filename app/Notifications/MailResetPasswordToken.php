@@ -27,7 +27,7 @@ class MailResetPasswordToken extends Notification
      */
     public function via()
     {
-        return ['mail'];
+        return [ 'mail' ];
     }
 
     /**

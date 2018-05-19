@@ -22,7 +22,7 @@ class UserController extends Controller
 
         $limit = Input::get('limit', 10);
 
-        $queryParams = array_diff_key($_GET, array_flip(['page']));
+        $queryParams = array_diff_key($_GET, array_flip([ 'page' ]));
         $usersPaginator = User::paginate($limit)
             ->appends($queryParams)
             ->appends([
@@ -41,7 +41,7 @@ class UserController extends Controller
 
         $fractal->parseIncludes(Input::get('include', ''));
 
-        if (! $user = User::find($id)) {
+        if (!$user = User::find($id)) {
             throw new NotFoundHttpException();
         }
 

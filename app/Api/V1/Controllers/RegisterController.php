@@ -12,7 +12,7 @@ class RegisterController extends Controller
     public function register(RegisterRequest $request)
     {
         $user = new User($request->all());
-        if (! $user->save()) {
+        if (!$user->save()) {
             throw new HttpException(500);
         }
 
