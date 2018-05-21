@@ -40,11 +40,6 @@ $api->version('v1', ['middleware' => 'api'], function ($api) {
             'uses' => 'App\\Api\\V1\\Controllers\\ForgotPasswordController@sendResetEmail',
         ]);
         $api->post('reset', 'App\\Api\\V1\\Controllers\\ResetPasswordController@resetPassword');
-        $api->get('reset/{token}', [
-            'as' => 'password.reset',
-            function () {
-            },
-        ]);
     });
 
     // Protected routes

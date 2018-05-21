@@ -40,7 +40,8 @@ class MailResetPasswordToken extends Notification
         return (new MailMessage())
             ->subject('Reset your password')
             ->line('You are receiving this email because we received a password reset request for your account.')
-            ->action('Reset Password', url('https://frontend.com/'.$this->token))
+            ->line('Copy the code below.')
+            ->line($this->token)
             ->line('If you did not request a password reset, no further action is required.');
     }
 }
