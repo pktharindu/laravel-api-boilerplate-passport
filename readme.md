@@ -37,7 +37,7 @@ You don't have to worry about authentication and password recovery anymore. I cr
 
 For each controller there's an already setup route in `routes/api.php` file:
 
-* `POST api/auth/login`, to do the login and get your access token or to refresh an existent access token by getting a new one;
+* `POST api/auth/login`, to do the login and get your access token or to refresh your existent token;
 * `POST api/auth/register`, to create a new user into your application;
 * `POST api/auth/recovery`, to recover your credentials;
 * `POST api/auth/reset`, to reset your password after the recovery;
@@ -59,7 +59,7 @@ There are also the validation rules for every action (login, sign up, recovery a
 
 ## Creating Endpoints
 
-You can create endpoints in the same way you could to with using the single _dingo/api_ package. You can <a href="https://github.com/dingo/api/wiki/Creating-API-Endpoints" target="_blank">read its documentation</a> for details. After all, this is just a boilerplate! :)
+You can create endpoints in the same way you could to with using the single _dingo/api_ package. You can <a href="https://github.com/dingo/api/wiki/Creating-API-Endpoints" target="_blank">read its documentation</a> for details. After all, this is just a boilerplate! :smirk:
 
 However, I added some example routes to the `routes/api.php` file to give you immediately an idea.
 
@@ -71,7 +71,7 @@ Thanks to the _barryvdh/laravel-cors_ package, you can handle CORS easily. Just 
 
 ## Code styling
 
-PHP-CS-Fixer is used for strong style guidelines.
+PHP-CS-Fixer is used for strong :muscle: style guidelines.
 
 PHP is pre-configured for official Laravel styling, just launch `vendor\bin\php-cs-fixer fix` for global project auto-formatting.
 
@@ -85,7 +85,7 @@ In order to run tests:
 
 ## Feedback
 
-I made this project for personal purposes. I decided to share it here to help anyone with the same needs. If you have any feedback to improve it, feel free to make a suggestion, or open a PR!
+I made this project for personal purposes. I decided to share it here to help anyone with the same needs :innocent:. If you have any feedback to improve it, feel free to make a suggestion, or open a PR!
 
 ## License
 
