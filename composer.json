@@ -6,16 +6,16 @@
     "type": "project",
     "require": {
         "php": "^7.1.3",
-        "barryvdh/laravel-cors": "^0.11.0",
+        "barryvdh/laravel-cors": "^0.11.2",
         "dingo/api": "2.0.0-alpha2",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "5.6.*",
-        "laravel/passport": "^6.0",
+        "laravel/framework": "5.7.*",
+        "laravel/passport": "^7.0",
         "laravel/tinker": "^1.0"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.1",
-        "barryvdh/laravel-ide-helper": "^2.4",
+        "barryvdh/laravel-debugbar": "^3.2",
+        "barryvdh/laravel-ide-helper": "^2.5",
         "filp/whoops": "^2.0",
         "friendsofphp/php-cs-fixer": "^2.10",
         "fzaninotto/faker": "^1.4",
@@ -39,8 +39,7 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": [
-            ]
+            "dont-discover": []
         }
     },
     "scripts": {
@@ -48,12 +47,12 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate",
+            "@php artisan key:generate --ansi",
             "php artisan passport:keys --force"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover"
+            "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
             "@php artisan ide-helper:generate",

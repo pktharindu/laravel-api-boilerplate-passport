@@ -8,15 +8,15 @@ Laravel API Boilerplate (Passport Edition)
 <a href="https://scrutinizer-ci.com/g/pktharindu/laravel-api-boilerplate-passport/build-status/master"><img src="https://scrutinizer-ci.com/g/pktharindu/laravel-api-boilerplate-passport/badges/build.png?b=master" alt="Build Status"></a>
 </p>
 
-Laravel API Boilerplate is a "starter kit" you can use to build your first API in seconds. As you can easily imagine, it is built on top of the awesome Laravel Framework. This version is built on Laravel 5.6! 
+Laravel API Boilerplate is a "starter kit" you can use to build your first API in seconds. As you can easily imagine, it is built on top of the awesome Laravel Framework. This version is built on Laravel 5.7!
 
 > This Boilerplate supports OAuth2 password grant out of the box which allows your other first-party clients, such as a mobile application, to obtain an access token using an e-mail address and password. But feel free to use other grant types in _laravel/passport_ by extending this.
 
 It is built on top of these big guys:
 
-* Laravel Passport - [laravel/passport](https://github.com/laravel/passport)
-* Dingo API - [dingo/api](https://github.com/dingo/api)
-* Laravel-CORS [barryvdh/laravel-cors](http://github.com/barryvdh/laravel-cors)
+- Laravel Passport - [laravel/passport](https://github.com/laravel/passport)
+- Dingo API - [dingo/api](https://github.com/dingo/api)
+- Laravel-CORS [barryvdh/laravel-cors](http://github.com/barryvdh/laravel-cors)
 
 What I made is really simple: an integration of these three packages and a setup of some authentication and credentials recovery methods.
 
@@ -37,15 +37,15 @@ You don't have to worry about authentication and password recovery anymore. I cr
 
 For each controller there's an already setup route in `routes/api.php` file:
 
-* `POST api/auth/login`, to do the login and get your access token or to refresh your existent token;
-* `POST api/auth/register`, to create a new user into your application;
-* `POST api/auth/recovery`, to recover your credentials;
-* `POST api/auth/reset`, to reset your password after the recovery;
-* `POST api/auth/logout`, to log out the user by invalidating the passed token;
+- `POST api/auth/login`, to do the login and get your access token or to refresh your existent token;
+- `POST api/auth/register`, to create a new user into your application;
+- `POST api/auth/recovery`, to recover your credentials;
+- `POST api/auth/reset`, to reset your password after the recovery;
+- `POST api/auth/logout`, to log out the user by invalidating the passed token;
 
 ### Separate File for Routes
 
-All the API routes can be found in the `routes/api.php` file. This also follow the Laravel 5.5 convention.
+All the API routes can be found in the `routes/api.php` file. This also follow the Laravel convention.
 
 ### Secrets Generation
 
@@ -81,7 +81,7 @@ If you want to contribute to this project, feel free to do it and open a PR. How
 
 In order to run tests:
 
-* run `vendor\bin\phpunit`;
+- run `vendor\bin\phpunit`;
 
 ## Feedback
 
