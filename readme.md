@@ -8,7 +8,7 @@ Laravel API Boilerplate (Passport Edition)
 <a href="https://scrutinizer-ci.com/g/pktharindu/laravel-api-boilerplate-passport/build-status/master"><img src="https://scrutinizer-ci.com/g/pktharindu/laravel-api-boilerplate-passport/badges/build.png?b=master" alt="Build Status"></a>
 </p>
 
-Laravel API Boilerplate is a "starter kit" you can use to build your first API in seconds. As you can easily imagine, it is built on top of the awesome Laravel Framework. This version is built on Laravel 5.7!
+Laravel API Boilerplate is a "starter kit" you can use to build your first API in seconds. As you can easily imagine, it is built on top of the awesome Laravel Framework. This version is built on Laravel 5.8!
 
 > This Boilerplate supports OAuth2 password grant out of the box which allows your other first-party clients, such as a mobile application, to obtain an access token using an e-mail address and password. But feel free to use other grant types in _laravel/passport_ by extending this.
 
@@ -53,7 +53,7 @@ Every time you create a new project starting from this repository, the _php arti
 
 ## Configuration
 
-As I already said before, this boilerplate is based on _laravel/passport_ and _dingo/api_ packages. So, you can find many information about configuration <a href="https://laravel.com/docs/5.6/passport" target="_blank">here</a> and <a href="https://github.com/dingo/api/wiki/Configuration" target="_blank">here</a>.
+As I already said before, this boilerplate is based on _laravel/passport_ and _dingo/api_ packages. So, you can find many information about configuration <a href="https://laravel.com/docs/5.8/passport" target="_blank">here</a> and <a href="https://github.com/dingo/api/wiki/Configuration" target="_blank">here</a>.
 
 There are also the validation rules for every action (login, sign up, recovery and reset) inside `app/Api/V1/Requests` directory. Feel free to customize them for your needs.
 
