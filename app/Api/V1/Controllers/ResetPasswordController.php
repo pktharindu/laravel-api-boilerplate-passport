@@ -2,9 +2,9 @@
 
 namespace App\Api\V1\Controllers;
 
+use App\Api\V1\Requests\ResetPasswordRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Password;
-use App\Api\V1\Requests\ResetPasswordRequest;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class ResetPasswordController extends Controller
@@ -39,8 +39,7 @@ class ResetPasswordController extends Controller
     /**
      * Get the password reset credentials from the request.
      *
-     * @param ResetPasswordRequest $request
-     *
+     * @param  ResetPasswordRequest  $request
      * @return array
      */
     protected function credentials(ResetPasswordRequest $request)
@@ -53,8 +52,8 @@ class ResetPasswordController extends Controller
     /**
      * Reset the given user's password.
      *
-     * @param \Illuminate\Contracts\Auth\CanResetPassword $user
-     * @param string                                      $password
+     * @param  \Illuminate\Contracts\Auth\CanResetPassword  $user
+     * @param  string  $password
      */
     protected function reset($user, $password)
     {

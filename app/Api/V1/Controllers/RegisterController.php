@@ -2,9 +2,9 @@
 
 namespace App\Api\V1\Controllers;
 
-use App\Models\User;
-use App\Http\Controllers\Controller;
 use App\Api\V1\Requests\RegisterRequest;
+use App\Http\Controllers\Controller;
+use App\Models\User;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class RegisterController extends Controller

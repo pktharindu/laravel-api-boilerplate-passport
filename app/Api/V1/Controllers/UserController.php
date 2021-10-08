@@ -2,14 +2,14 @@
 
 namespace App\Api\V1\Controllers;
 
-use App\Models\User;
-use League\Fractal\Manager;
-use League\Fractal\Resource\Item;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Input;
-use League\Fractal\Resource\Collection;
 use App\Api\V1\Transformers\UserTransformer;
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Support\Facades\Input;
+use League\Fractal\Manager;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
+use League\Fractal\Resource\Collection;
+use League\Fractal\Resource\Item;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class UserController extends Controller

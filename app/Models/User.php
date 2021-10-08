@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use Laravel\Passport\HasApiTokens;
-use App\Models\Traits\Method\UserMethod;
-use Illuminate\Notifications\Notifiable;
 use App\Models\Traits\Attribute\UserAttribute;
+use App\Models\Traits\Method\UserMethod;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {

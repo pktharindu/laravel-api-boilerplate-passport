@@ -2,8 +2,8 @@
 
 namespace App\Api\V1\Controllers;
 
-use Auth;
 use App\Http\Controllers\Controller;
+use Auth;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class LogoutController extends Controller
