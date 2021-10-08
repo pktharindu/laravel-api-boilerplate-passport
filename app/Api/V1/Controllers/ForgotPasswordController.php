@@ -2,9 +2,9 @@
 
 namespace App\Api\V1\Controllers;
 
+use App\Api\V1\Requests\ForgotPasswordRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Password;
-use App\Api\V1\Requests\ForgotPasswordRequest;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class ForgotPasswordController extends Controller
